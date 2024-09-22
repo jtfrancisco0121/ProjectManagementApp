@@ -42,7 +42,7 @@ function Navbar() {
           href="/settings"
           className={isDarkMode ? `h-min w-min rounded p-2 dark:hover:bg-gray700` : `h-min w-min rounded p-2 hover:bg-gray-100`}
         ></Link>
-        <Settings className="h-6 cursor-pointer dark:text-wite" />
+        <Settings className="h-6 w-6 cursor-pointer dark:text-white" />
         <div className="ml-2 mr-5 hidden min-h[2em] bg-gray-200 md:inline-block">
 
         </div>
