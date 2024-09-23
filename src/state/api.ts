@@ -80,8 +80,11 @@ export const api = createApi({
             invalidatesTags: ["Projects"],
         }),
         getTasks: build.query<Task[], { projectId: number }>({
-            query: (projectId) => `tasks?projectId=${projectId}`,
-            providesTags: (result) => result ? result.map(({ id }) => ({ type: "Tasks" as const, id })) : [{ type: "Tasks" as const }],
+            query: ({ projectId }) => `tasks?projectId=${projectId}`,
+            providesTags: (result) =>
+                result
+                    ? result.map(({ id }) => ({ type: "Tasks" as const, id }))
+                    : [{ type: "Tasks" as const }],
         }),
         createTask: build.mutation<Task, Partial<Task>>({
             query: (task) => ({
@@ -104,4 +107,9 @@ export const api = createApi({
     }),
 });
 
-export const { useGetProjectsQuery, useCreateProjectMutation, useGetTasksQuery, useCreateTaskMutation } = api;
+export const { useGetProjectsQuery,
+    useCreateProjectMutation,
+    useGetTasksQuery,
+    useCreateTaskMutation,
+    useUpdateTaskStatusMutation
+} = api;
