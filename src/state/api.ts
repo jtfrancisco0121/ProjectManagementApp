@@ -90,7 +90,7 @@ export const api = createApi({
             query: (task) => ({
                 url: "tasks",
                 method: "POST",
-                body: task
+                body: task,
             }),
             invalidatesTags: ["Tasks"],
         }),
